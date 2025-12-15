@@ -9,7 +9,7 @@ import docx
 st.set_page_config(page_title="AI Mock Interview", page_icon="🧠", layout="centered")
 
 # Gemini API Key Setup
-GEMINI_API_KEY = "AIzaSyDcJXTc_FM2sNqfWrvCrYYsAPKssCPl1AQ"  # Replace with your API key
+GEMINI_API_KEY = "AIzaSyCAsx8zn6HiuBzBrwuLyo-OMbc9tWKO2eU"  # Replace with your API key
 genai.configure(api_key=GEMINI_API_KEY)
 
 
@@ -47,7 +47,7 @@ def extract_resume_text(uploaded_file):
 
 def generate_questions(resume_text, interview_type):
     """Generate 5 interview questions using Gemini."""
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"""
     You are a professional mock interviewer.
     Based on the following resume and interview type, generate 5 high-quality interview questions.
@@ -69,7 +69,7 @@ def generate_questions(resume_text, interview_type):
 
 def generate_feedback(question, answer):
     """Generate feedback for a specific answer."""
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"""
     You are an expert interviewer.
     Evaluate the following answer for the question below.
@@ -165,7 +165,7 @@ if uploaded_file:
                 - Common Weaknesses:
                 - Final Advice:
                 """
-                model = genai.GenerativeModel("gemini-2.0-flash")
+                model = genai.GenerativeModel("gemini-2.5-flash")
                 response = model.generate_content(summary_prompt)
                 st.subheader("🏁 Overall Performance Summary")
                 st.write(response.text)
