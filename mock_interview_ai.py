@@ -9,7 +9,7 @@ import docx
 st.set_page_config(page_title="AI Mock Interview", page_icon="🧠", layout="centered")
 
 # Gemini API Key Setup
-GEMINI_API_KEY = "AIzaSyCAsx8zn6HiuBzBrwuLyo-OMbc9tWKO2eU"  # Replace with your API key
+GEMINI_API_KEY = "AIzaSyDcJXTc_FM2sNqfWrvCrYYsAPKssCPl1AQ"  # Replace with your API key
 genai.configure(api_key=GEMINI_API_KEY)
 
 
